@@ -749,7 +749,7 @@ class MethodChannelMapboxGl extends MapboxGlPlatform {
   @override
   Future<void> addSymbolLayer(
       String sourceId, String layerId, Map<String, dynamic> properties,
-      {String? belowLayerId}) async {
+      {String? belowLayerId, String? sourceLayer}) async {
     await _channel.invokeMethod('symbolLayer#add', <String, dynamic>{
       'sourceId': sourceId,
       'layerId': layerId,
@@ -762,7 +762,7 @@ class MethodChannelMapboxGl extends MapboxGlPlatform {
   @override
   Future<void> addLineLayer(
       String sourceId, String layerId, Map<String, dynamic> properties,
-      {String? belowLayerId}) async {
+      {String? belowLayerId, String? sourceLayer}) async {
     await _channel.invokeMethod('lineLayer#add', <String, dynamic>{
       'sourceId': sourceId,
       'layerId': layerId,
@@ -775,7 +775,7 @@ class MethodChannelMapboxGl extends MapboxGlPlatform {
   @override
   Future<void> addCircleLayer(
       String sourceId, String layerId, Map<String, dynamic> properties,
-      {String? belowLayerId}) async {
+      {String? belowLayerId, String? sourceLayer}) async {
     await _channel.invokeMethod('circleLayer#add', <String, dynamic>{
       'sourceId': sourceId,
       'layerId': layerId,
@@ -788,7 +788,7 @@ class MethodChannelMapboxGl extends MapboxGlPlatform {
   @override
   Future<void> addFillLayer(
       String sourceId, String layerId, Map<String, dynamic> properties,
-      {String? belowLayerId}) async {
+      {String? belowLayerId, String? sourceLayer}) async {
     await _channel.invokeMethod('fillLayer#add', <String, dynamic>{
       'sourceId': sourceId,
       'layerId': layerId,
@@ -810,5 +810,13 @@ class MethodChannelMapboxGl extends MapboxGlPlatform {
       'sourceId': sourceId,
       'source': source.toJson(),
     });
+  }
+
+  @override
+  Future<void> addRasterLayer(
+      String sourceId, String layerId, Map<String, dynamic> properties,
+      {String? belowLayerId, String? sourceLayer}) {
+    // TODO: implement addRasterLayer
+    throw UnimplementedError();
   }
 }
