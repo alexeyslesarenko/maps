@@ -315,5 +315,9 @@ abstract class MapboxGlPlatform {
     throw UnimplementedError('addFillLayer() has not been implemented.');
   }
 
+  Future<void> setLayerVisibility(bool visibility, String imageLayerId) async {
+    throw UnimplementedError('setLayerVisibility() has not been implemented.');
+  }
+
   void dispose() {}
 }

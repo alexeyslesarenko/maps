@@ -905,6 +905,13 @@ class MapboxMapController: NSObject, FlutterPlatformView, MGLMapViewDelegate, Ma
             setSource(sourceId: sourceId, geojson: geojson)
             result(nil)
 
+        case "style#setLayerVisibility":
+            guard let arguments = methodCall.arguments as? [String: Any] else { return }
+            guard let imageLayerId = arguments["imageLayerId"] as? String else { return }
+            guard let visibility = arguments["visibility"] as? Bool else { return }
+            self.mapView.style?.layer(withIdentifier: imageLayerId)?.isVisible = visibility
+            result(nil)
+
         default:
             result(FlutterMethodNotImplemented)
         }

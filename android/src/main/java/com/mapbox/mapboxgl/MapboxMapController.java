@@ -1294,6 +1294,18 @@ final class MapboxMapController
         result.success(null);
         break;
       }
+      case "style#setLayerVisibility": {
+        if (style == null) {
+          result.error("STYLE IS NULL", "The style is null. Has onStyleLoaded() already been invoked?", null);
+        }
+        if (call.argument("visibility")) {
+          style.getLayer(call.argument("imageLayerId")).setProperties(visibility(VISIBLE));
+        } else {
+          style.getLayer(call.argument("imageLayerId")).setProperties(visibility(NONE));
+        }
+        result.success(null);
+        break;
+      }
       default:
         result.notImplemented();
     }

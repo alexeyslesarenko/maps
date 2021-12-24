@@ -962,6 +962,11 @@ class MapboxMapController extends ChangeNotifier {
     return _mapboxGlPlatform.removeLayer(layerId);
   }
 
+  /// Shows/Hides a Mapbox style layer
+  Future<void> setLayerVisibility(bool visibility, String imageLayerId) {
+    return _mapboxGlPlatform.setLayerVisibility(visibility, imageLayerId);
+  }
+
   /// Returns the point on the screen that corresponds to a geographical coordinate ([latLng]). The screen location is in screen pixels (not display pixels) relative to the top left of the map (not of the whole screen)
   ///
   /// Note: The resulting x and y coordinates are rounded to [int] on web, on other platforms they may differ very slightly (in the range of about 10^-10) from the actual nearest screen coordinate.
