@@ -9,10 +9,12 @@ dependencies:
   mapbox_gl_platform_interface:
     git:
       url: https://github.com/alexeyslesarenko/maps.git
+      ref: layers-visibility
       path: mapbox_gl_platform_interface
   mapbox_gl_web:
     git:
       url: https://github.com/alexeyslesarenko/maps.git
+      ref: layers-visibility
       path: mapbox_gl_web
 
 dependency_overrides:
